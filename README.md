@@ -120,5 +120,8 @@ public class HelloHTTPHandler : IHttpHandler
 具体可以参考：[MSDN - Walkthrough: Creating a Synchronous HTTP Handler](https://msdn.microsoft.com/en-us/library/ms228090.aspx 'MSDN')
 
 
+## Request & Response 
+
+
 ## Reference
 * [Build Python Web Framework](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
