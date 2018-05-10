@@ -35,3 +35,7 @@
 下面会从一个简单的WSGI应用讲起，并构建简单的Web framework，进而延伸到Flask这个轻量级的框架。  
 
 ## WSGI
+
+
+## Reference
+* [http://ningning.today/2017/08/05/web/build-python-web-framework/](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
