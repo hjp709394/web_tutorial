@@ -26,4 +26,7 @@
 
 
 # Goal
-Try to master full stack techniques by implementing a instagram like web site. 
+通过实现一个简单的类似Instagram的网站学习构建网站的整套技术，包括前端和后端。主要使用Python，Flask，React和TypeScript等技术。会穿插一些延伸的话题。
+
+
+# How web frame work works
