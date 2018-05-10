@@ -4,7 +4,7 @@
    1.1. WSGI  
    1.2. Request & Response  
    1.3. Routing  
-   1.4. Flask  
+   1.4. Flask code
    1.5. Other topic  
    1.6. Reference  
  2. Build an simple app using Flask & React  
@@ -48,7 +48,7 @@ def application(environ, start_response):
 ```
 这部分代码可以参考 1.1._wsgi/wsgi_demo.py . 要运行程序，可以执行以下命令：
 ``` shell
-python ./1.1._wsgi/wsgi_demo.py --ip <your-ip-address> --port <your-port-number>
+python ./1.1._wsgi/demo.py --ip <your-ip-address> --port <your-port-number>
 ```
 然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/Routing/Demo?parameter=value  
 在environ的'PATH\_INFO'中可以找到路由‘Routing/Demo’，而在‘QUERY\_STRING’中可以找到参数‘Parameter=value’。也就是environ里面包含了我们处理一个Request所需的信息，后面我们会看到一个Web Framework是怎么利用这些信息帮助我们构建Web App的。
@@ -121,7 +121,22 @@ public class HelloHTTPHandler : IHttpHandler
 
 
 ## Request & Response 
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/any/route?name=MengJiang
 
+
+## Routing
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=MengJiang
+
+
+## Flask code
+
+
+# Other topic
+TCP & UDP  
+Multi processor/thread  
+Session  
+Database  
+Template  
 
 ## Reference
 * [Build Python Web Framework](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
