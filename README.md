@@ -30,11 +30,44 @@
 
 
 # How web framework works
-一个Web App可以概括为：收到一个http请求，返回所请求的内容。要做到这点，不一定要使用Web framework，一个简单的WSGI的应用就能做到。但是以WSGI应用的方式构建Web App其效率是非常低的，所以我们会用到Web framework。它对WSGI进行了封装，并还提供了很多额外的功能，比如Request和Response的抽象，路由（Routing）等等。  
+一个Web App可以概括为：收到一个http请求，返回所请求的内容。要做到这点，不一定要使用Web framework，在Python里一个简单的WSGI的应用就能做到。但是以WSGI应用的方式构建Web App其效率是非常低的，所以我们会用到Web framework。它对WSGI进行了封装，并还提供了很多额外的功能，比如Request和Response的抽象，路由（Routing）等等。  
   
 下面会从一个简单的WSGI应用讲起，并构建简单的Web framework，进而延伸到Flask这个轻量级的框架。  
 
+
 ## WSGI
+在Java中类似的概念是Servlet，而Asp.Net/C#中类似的概念是HttpHandler。  
+
+HttpHandler样例
+``` c#
+using System.Web;
+public class HelloWorldHandler : IHttpHandler
+{
+    public HelloWorldHandler()
+    {
+    }
+    public void ProcessRequest(HttpContext context)
+    {
+        HttpRequest Request = context.Request;
+        HttpResponse Response = context.Response;
+        // This handler is called whenever a file ending 
+        // in .sample is requested. A file with that extension
+        // does not need to exist.
+        Response.Write("<html>");
+        Response.Write("<body>");
+        Response.Write("<h1>Hello from a synchronous custom HTTP handler.</h1>");
+        Response.Write("</body>");
+        Response.Write("</html>");
+    }
+    public bool IsReusable
+    {
+        // To enable pooling, return true here.
+        // This keeps the handler in memory.
+        get { return false; }
+    }
+}
+```
+具体可以参考：[MSDN - Walkthrough: Creating a Synchronous HTTP Handler](https://msdn.microsoft.com/en-us/library/ms228090.aspx 'MSDN')
 
 
 ## Reference
