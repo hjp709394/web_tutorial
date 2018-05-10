@@ -30,7 +30,7 @@
 
 
 # How web framework works
-一个Web App可以概括为：收到一个http请求，返回所请求的内容。要做到这点，不一定要使用Web framework，在Python里一个简单的WSGI的应用就能做到。但是以WSGI应用的方式构建Web App其效率是非常低的，所以我们会用到Web framework。它对WSGI进行了封装，并还提供了很多额外的功能，比如Request和Response的抽象，路由（Routing）等等。  
+一个Web App可以概括为：收到一个http请求，返回所请求的内容。要做到这点，不一定要使用Web framework，在Python里一个简单的WSGI的应用就能做到。但是以WSGI应用的方式构建Web App其效率是非常低的，所以我们会用到Web framework。它对WSGI进行了封装，并还提供了很多额外的功能，比如Session，Request和Response的抽象，路由（Routing）等等。  
   
 下面会从一个简单的WSGI应用讲起，并构建简单的Web framework，进而延伸到Flask这个轻量级的框架。  
 
@@ -50,6 +50,8 @@ def application(environ, start_response):
 ``` shell
 python ./1.1._wsgi/wsgi_demo.py --ip <your-ip-address> --port <your-port-number>
 ```
+然后打开浏览器访问以下网址：http://<your-ip-address>:<your-port-number>/Routing/Demo?parameter=value  
+在environ的'PATH\_INFO'中可以找到路由‘Routing/Demo’，而在‘QUERY\_STRING’中可以找到参数‘Parameter=value’。也就是environ里面包含了我们处理一个Request所需的信息，后面我们会看到一个Web Framework是怎么利用这些信息帮助我们构建Web App的。
 
 Java里的Servlet样例
 ``` java
@@ -82,6 +84,7 @@ public class HelloServlet extends HttpServlet {
   }
 }
 ```
+具体可以参考：[Servlet 实例](http://www.runoob.com/servlet/servlet-first-example.html 'Servlet实例')
 
 C#里的HttpHandler样例
 ``` c#
