@@ -50,7 +50,7 @@ def application(environ, start_response):
 ``` shell
 python ./1.1._wsgi/wsgi_demo.py --ip <your-ip-address> --port <your-port-number>
 ```
-然后打开浏览器访问以下网址：http://<your-ip-address>:<your-port-number>/Routing/Demo?parameter=value  
+然后打开浏览器访问以下网址：http://\<your-ip-address\>:\<your-port-number\>/Routing/Demo?parameter=value  
 在environ的'PATH\_INFO'中可以找到路由‘Routing/Demo’，而在‘QUERY\_STRING’中可以找到参数‘Parameter=value’。也就是environ里面包含了我们处理一个Request所需的信息，后面我们会看到一个Web Framework是怎么利用这些信息帮助我们构建Web App的。
 
 Java里的Servlet样例
