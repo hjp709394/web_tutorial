@@ -38,14 +38,60 @@
 ## WSGI
 在Java中类似的概念是Servlet，而Asp.Net/C#中类似的概念是HttpHandler。  
 
-HttpHandler样例
+Python里的WSGI样例
+``` python
+def application(environ, start_response):
+    status = '200 OK'                   # Status code ref: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+    headers = [('Content-Type', 'text/html; charset=utf8')]
+    start_response(status, headers)
+    return [b"Meng Jiang is smart"]     # WSGI requires to return iterable bytes literal
+```
+这部分代码可以参考 1.1._wsgi/wsgi_demo.py . 要运行程序，可以执行以下命令：
+``` shell
+python ./1.1._wsgi/wsgi_demo.py --ip <your-ip-address> --port <your-port-number>
+```
+
+Java里的Servlet样例
+``` java
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class HelloServlet extends HttpServlet {
+ 
+  private String message;
+
+  public void init() throws ServletException
+  {
+      message = "Hello World";
+  }
+
+  public void doGet(HttpServletRequest request,
+                    HttpServletResponse response)
+            throws ServletException, IOException
+  {
+      response.setContentType("text/html");
+
+      PrintWriter out = response.getWriter();
+      out.println("<h1>" + message + "</h1>");
+  }
+  
+  public void destroy()
+  {
+      // nothing needs to be done in this case
+  }
+}
+```
+
+C#里的HttpHandler样例
 ``` c#
 using System.Web;
-public class HelloWorldHandler : IHttpHandler
+public class HelloHTTPHandler : IHttpHandler
 {
-    public HelloWorldHandler()
+    public HelloHTTPHandler()
     {
     }
+
     public void ProcessRequest(HttpContext context)
     {
         HttpRequest Request = context.Request;
@@ -59,6 +105,7 @@ public class HelloWorldHandler : IHttpHandler
         Response.Write("</body>");
         Response.Write("</html>");
     }
+
     public bool IsReusable
     {
         // To enable pooling, return true here.
@@ -71,4 +118,4 @@ public class HelloWorldHandler : IHttpHandler
 
 
 ## Reference
-* [http://ningning.today/2017/08/05/web/build-python-web-framework/](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
+* [Build Python Web Framework](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
