@@ -4,7 +4,7 @@
    1.1. WSGI  
    1.2. Request & Response  
    1.3. Routing  
-   1.4. Flask code
+   1.4. Flask code  
    1.5. Other topic  
    1.6. Reference  
  2. Build an simple app using Flask & React  
@@ -128,7 +128,7 @@ public class HelloHTTPHandler : IHttpHandler
 打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=MengJiang
 
 
-## Flask code
+## Flask code  
 
 
 # Other topic
