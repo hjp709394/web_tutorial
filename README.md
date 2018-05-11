@@ -219,6 +219,6 @@ Template
 ## First Flask app  
 执行以下命令：
 ``` shell
-FLASK_APP=./2.1._FirstFlaskApp/demo.py python -m flask run --host=&lt;your-ip-address&gt; --port=&lt;your-port-number&gt;
+FLASK_APP=./2.1._FirstFlaskApp/demo.py python -m flask run --host=<your-ip-address> --port=<your-port-number>
 ```
 然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/
