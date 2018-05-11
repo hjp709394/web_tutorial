@@ -129,6 +129,38 @@ public class HelloHTTPHandler : IHttpHandler
 
 
 ## Flask code  
+在Flask的Github repo里面能够找到我们Web Framework对应功能的代码样例。  
+
+比如Routing，你可以在 https://github.com/pallets/flask/blob/master/flask/app.py 的def route(self, rule, **options)函数中找到实现Routing的代码：  
+
+``` python
+def route(self, rule, **options):
+    """A decorator that is used to register a view function for a
+    given URL rule.  This does the same thing as :meth:`add_url_rule`
+    but is intended for decorator usage::
+        @app.route('/')
+        def index():
+            return 'Hello World'
+    For more information refer to :ref:`url-route-registrations`.
+    :param rule: the URL rule as string
+    :param endpoint: the endpoint for the registered URL rule.  Flask
+                     itself assumes the name of the view function as
+                     endpoint
+    :param options: the options to be forwarded to the underlying
+                    :class:`~werkzeug.routing.Rule` object.  A change
+                    to Werkzeug is handling of method options.  methods
+                    is a list of methods this rule should be limited
+                    to (``GET``, ``POST`` etc.).  By default a rule
+                    just listens for ``GET`` (and implicitly ``HEAD``).
+                    Starting with Flask 0.6, ``OPTIONS`` is implicitly
+                    added and handled by the standard request handling.
+    """
+    def decorator(f):																				# 定义decorator
+        endpoint = options.pop('endpoint', None)
+        self.add_url_rule(rule, endpoint, f, **options) 		# 符合rule（文档中@app.route('/')中的'/'）的请求将会有函数f（文档中的def index()）处理，并返回处理后的html文档
+        return f
+    return decorator
+```
 
 
 ## Other topic
