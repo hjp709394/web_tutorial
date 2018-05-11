@@ -212,3 +212,13 @@ Template
 
 ## Reference
 * [Build Python Web Framework](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
+
+
+# Build an simple app using Flask & React  
+
+## First Flask app  
+执行以下命令：
+``` shell
+FLASK_APP=./2.1._FirstFlaskApp/demo.py python -m flask run --host=&lt;your-ip-address&gt; --port=&lt;your-port-number&gt;
+```
+然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/
