@@ -9,11 +9,11 @@
    1.6. Reference  
  2. Build an simple app using Flask & React  
    2.1. First Flask app  
-   2.2. Create a complexer page  
-   2.3. Inter-action  
-   2.4. Create more pages  
-   2.5. Design database  
-   2.6. Restful  
+   2.2. Restful  
+   2.3. Create a complexer page  
+   2.4. Inter-action  
+   2.5. Create more pages  
+   2.6. Design database  
    2.7. Reference  
  3. Other topics  
    3.1. Project structure  
@@ -222,3 +222,13 @@ Template
 FLASK_APP=./2.1._FirstFlaskApp/demo.py python -m flask run --host=<your-ip-address> --port=<your-port-number>
 ```
 然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/
+
+## Restful
+
+
+## Template
+
+
+## Reference
+[Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')
+[使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')
