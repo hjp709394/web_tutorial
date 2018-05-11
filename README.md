@@ -155,9 +155,11 @@ def route(self, rule, **options):
                     Starting with Flask 0.6, ``OPTIONS`` is implicitly
                     added and handled by the standard request handling.
     """
-    def decorator(f):																				# 定义decorator
+    def decorator(f):                                     # 定义decorator
         endpoint = options.pop('endpoint', None)
-        self.add_url_rule(rule, endpoint, f, **options) 		# 符合rule（文档中@app.route('/')中的'/'）的请求将会有函数f（文档中的def index()）处理，并返回处理后的html文档
+        self.add_url_rule(rule, endpoint, f, **options)   # 符合rule（文档中@app.route('/')中的'/'）的请求  
+                                                          # 将会由函数f（文档中的def index()）处理，  
+                                                          # 并返回处理后的html文档
         return f
     return decorator
 ```
