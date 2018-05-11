@@ -131,6 +131,44 @@ public class HelloHTTPHandler : IHttpHandler
 ## Flask code  
 在Flask的Github repo里面能够找到我们Web Framework对应功能的代码样例。  
 
+比如Request的抽象，Flask是基于werkzeug构建的，werkzeug是一个WSGI库，提供了很多WSGI应用所需的Utility函数。在werkzeug的Github repo里能够找到对应的Request和Response的实现：
+``` python
+# code: https://github.com/pallets/werkzeug/blob/master/werkzeug/wrappers.py
+class BaseRequest(object):
+
+		...
+
+    @cached_property
+    def args(self):
+        """The parsed URL parameters (the part in the URL after the question
+        mark).
+        By default an
+        :class:`~werkzeug.datastructures.ImmutableMultiDict`
+        is returned from this function.  This can be changed by setting
+        :attr:`parameter_storage_class` to a different type.  This might
+        be necessary if the order of the form data is important.
+        """
+        return url_decode(wsgi_get_bytes(self.environ.get('QUERY_STRING', '')),
+                          self.url_charset, errors=self.encoding_errors,
+                          cls=self.parameter_storage_class)
+
+
+class BaseResponse(object):
+	
+	...
+
+  def __call__(self, environ, start_response):
+      """Process this response as WSGI application.
+      :param environ: the WSGI environment.
+      :param start_response: the response callable provided by the WSGI
+                             server.
+      :return: an application iterator
+      """
+      app_iter, status, headers = self.get_wsgi_response(environ)
+      start_response(status, headers)
+      return app_iter
+```
+
 比如Routing，你可以在 https://github.com/pallets/flask/blob/master/flask/app.py 的def route(self, rule, **options)函数中找到实现Routing的代码：  
 
 ``` python
