@@ -9,7 +9,7 @@
    1.6. Reference  
  2. Build an simple app using Flask & React  
    2.1. First Flask app  
-   2.2. Template
+   2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
    2.5. Inter-action  
