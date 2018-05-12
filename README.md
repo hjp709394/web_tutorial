@@ -260,7 +260,7 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 
 
 ## Reference
-[Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')
-[使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')
-[A Beginner's Guide to CSS Front End Frameworks](https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b 'A Beginner\'s Guide to CSS Front End Frameworks')
-[The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')
+[Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
+[使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')  
+[A Beginner's Guide to CSS Front End Frameworks](https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b 'A Beginner\'s Guide to CSS Front End Frameworks')  
+[The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')  
