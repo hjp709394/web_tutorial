@@ -16,16 +16,22 @@
    2.6. Create more pages  
    2.7. Design database  
    2.8. Reference  
- 3. Deploy to AWS / Azure
+ 3. Deploy to AWS / Azure  
  4. Other topics  
    3.1. Project structure  
    3.2. ORM  
    3.3. Blueprint  
    3.4. Reference  
+   3.5. Custom your bootstrap
+   3.6. NPM front-end package managerment  
  5. Other frameworks  
    4.1. ASP.net  
    4.2. Spring  
  6. Open source reference
+   6.1 Bootstrap
+   6.2 React
+   6.3 Flask
+   6.4 Flask web site
 
 
 # Goal
@@ -253,7 +259,9 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 有了Template我们终于可以开始构建一个稍微复杂一点的页面了。
 
 ## Create a more complex page  
-这部分主要需要的是HTML的技术
+这部分主要需要的是HTML的技术  
+
+Flask的Debug模式，会每次重新加载资源文件，这样我们的修改在重新加载网页的时候能够反映出来，方便debug。
 
 
 ## Restful
@@ -264,3 +272,4 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 [使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')  
 [A Beginner's Guide to CSS Front End Frameworks](https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b 'A Beginner\'s Guide to CSS Front End Frameworks')  
 [The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')  
+[Boostrap Sample of Different Layout](https://v4-alpha.getbootstrap.com/examples/ 'Bootstrap Sample')

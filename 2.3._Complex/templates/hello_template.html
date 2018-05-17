@@ -1,18 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>FIXME</title>
+<title>MengJiang is perfect</title>
 <!--
 <link rel="stylesheet" type="text/css" href="FIXME">
 <script type="text/javascript" src="FIXME"></script>
 <style type="text/css">
 </style>
 -->
+
+<!-- boostrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Make sure proper renderring and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1000px;
+  }
+}
+</style>
+
 </head>
+
+
 <body>
-  <div id="header">This is the header</div>
-  <div id="main">This is the main body</div>
-  <div id="side">This is the side bar</div>
-  <div id="foot">This is the side bar</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="static/imgs/hdImg_a1fd3fa2e5ee8ef56627def908e1a3421474218595566.jpg" class="img-circle" alt="Cinque Terre" style="max-width:150px; max-height:150px">
+    </div>
+    <div class="col-sm-5">
+      <p style="font-size:32px">Cucumber Huang</p>
+      <p style="font-size:16px"><strong>"MengJiang is perfect." -- Me</strong></p>
+    </div>
+  </div>
+</div>
+
+<br/>
+
+<div class="container">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item active">
+      <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">About Me</a>
+    </li>
+  </ul>
+
+  <br/>
+
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+      <p>bla</p>
+    </div>
+
+    <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
+      <div class="container">
+        <img src="static/imgs/mmexport1478146333151-01.jpeg" alt="" style="min-height:150px; max-height:450px">
+      </div>
+      <div class="container">
+        <p style="font-size:20px">I am a software engineer at Microsoft. And Microsoft is the best company in United States. Meng-Jiang is the most beautiful girl in the world</p>
+      </div>
+    </div>
+
+
+    <!-- HACK: Put these carousel at the end of the tab-content. Or the other tab's position would be wrong. Not sure why. -->
+    <div class="tab-pane fade in show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+      <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="static/imgs/IMG_20180513_122504_642.jpg" alt="" style="min-height:150px; max-height:500px; margin:auto">
+            </div>
+
+            <div class="item">
+              <img src="static/imgs/IMG_20180421_224003_476.jpg" alt="" style="min-height:150px; max-height:500px; margin:auto">
+            </div>
+
+            <div class="item">
+              <img src="static/imgs/IMG_20180425_005438_091.jpg" alt="" style="min-height:150px; max-height:500px; margin:auto;">
+            </div>
+
+            <div class="item">
+              <img src="static/imgs/IMG_20180425_115542_590.jpg" alt="" style="min-height:150px; max-height:500px; margin:auto;">
+            </div>
+
+            <div class="item">
+              <img src="static/imgs/IMG_20180425_123007_270.jpg" alt="" style="min-height:150px; max-height:500px; margin:auto;">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 </body>
+
+
 </html>
