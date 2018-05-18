@@ -282,7 +282,9 @@ Responsive是前端开发中一个很重要的概念，在窗口变化或者不�
 
 Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，最好是服务器存有一份等边长的图片，比如高度都一样的图片，方便在Carousel中显示。  
 
-Single Page Application (SPA)可以参考[Single Page Application](https://en.wikipedia.org/wiki/Single-page_application 'Single Page Application')
+Single Page Application (SPA)可以参考[Single Page Application](https://en.wikipedia.org/wiki/Single-page_application 'Single Page Application')  
+
+瀑布流布局（Masonry Layouts）是图片类网站常用的布局，能够轻易把不同尺寸的图片和谐地放在同一个页面里，Bootstrap里面支持瀑布流布局。
 
 ## Reference  
 [Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
