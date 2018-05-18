@@ -16,6 +16,7 @@
    2.6. Create more pages  
    2.7. Design database  
    2.8. Reference  
+   2.9. Other  
  3. Deploy to AWS / Azure  
  4. Other topics  
    3.1. Project structure  
@@ -259,15 +260,30 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 有了Template我们终于可以开始构建一个稍微复杂一点的页面了。
 
 ## Create a more complex page  
+
 这部分主要需要的是HTML的技术  
 
-Flask的Debug模式，会每次重新加载资源文件，这样我们的修改在重新加载网页的时候能够反映出来，方便debug。
+Flask的Debug模式，会每次重新加载资源文件，这样我们的修改在重新加载网页的时候能够反映出来，方便debug。但是注意浏览器会做一定的Cache导致某些改动没有立即显示出来，这时可以使用Incognito / Private Mode。
 
+```shell
+FLASK_DEBUG=1 FLASK_APP=./2.3._Complex/demo.py python -m flask run --host=10.123.150.78 --port=7777
+```
 
 ## Restful
 
 
-## Reference
+## Other  
+
+Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstrap Themes](https://themes.getbootstrap.com/ 'bootstrap themes')  
+
+Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode')  
+
+Responsive是前端开发中一个很重要的概念，在窗口变化或者不同尺寸的屏幕中显示时会自动做缩放，保证在不同尺寸的屏幕中都能恰当地显示。尝试调整窗口的大小来感受Bootstrap的Responsive特性。
+
+Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，最好是服务器存有一份等边长的图片，比如高度都一样的图片，方便在Carousel中显示。  
+
+
+## Reference  
 [Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
 [使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')  
 [A Beginner's Guide to CSS Front End Frameworks](https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b 'A Beginner\'s Guide to CSS Front End Frameworks')  
