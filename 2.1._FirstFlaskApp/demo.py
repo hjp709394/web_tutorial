@@ -3,5 +3,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def HelloFlask():
-    return "MengJiang is magnanimous"
+    return "Meng-Jiang is magnanimous"
 

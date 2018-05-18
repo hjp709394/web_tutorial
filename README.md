@@ -131,11 +131,11 @@ public class HelloHTTPHandler : IHttpHandler
 
 
 ## Request & Response 
-打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/any/route?name=MengJiang
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/any/route?name=Meng-Jiang
 
 
 ## Routing
-打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=MengJiang
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=Meng-Jiang
 
 
 ## Flask code  

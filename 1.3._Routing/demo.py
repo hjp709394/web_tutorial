@@ -11,7 +11,7 @@ from exceptions import NotFoundError
 
 @routers(r'/say/something/(.*)$')
 def say_something(request, something):
-    name=request.args.get('name', 'MengJiang')
+    name=request.args.get('name', 'Meng-Jiang')
     return Response(['{name} is {something}'.format(name=name, something=something)])
 
 
