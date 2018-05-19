@@ -269,7 +269,9 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 FLASK_DEBUG=1 FLASK_APP=./2.3._Complex/demo.py python -m flask run --host=10.123.150.78 --port=7777
 ```
 
-在这个例子里我们使用了Bootstrap这个css框架，我们主要用到了Tab-Pane组件，Carousel组件和Card组件，整个应用都只包含一个页面，我们称为Single Page Application（SAP）。Card组件帮助我们实现了瀑布流的效果（Masonry Layouts），这是图片类应用常用的布局，能够将不同尺寸的图片自然地排版到同一个页面。
+可以看到这个终于有点像我们平时看到的网站了，暂时并没有使用到除了HTML和CSS之外的内容，后面会尝试新的技术。
+
+在这个例子里我们使用了Bootstrap这个css框架，我们主要用到了Tab-Pane组件，Carousel组件和Card组件。整个应用都只包含一个页面，我们称为Single Page Application（SAP），当然通常意义上的SAP应用会使用JS来跟服务器交互，在客户端动态渲染页面。Card组件帮助我们实现了瀑布流的效果（Masonry Layouts），这是图片类应用常用的布局，能够将不同尺寸的图片自然地排版到同一个页面。
 
 Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个页面会根据访问设备的尺寸自适应地调整布局，适应PC和Mobile端的访问。尝试调整浏览页的窗口宽度体会这个功能。  
 
