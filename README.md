@@ -265,6 +265,7 @@ FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> -
 
 为了方便开发，我么使用Flask的Debug模式，这样每次访问页面会重新加载资源文件，这样我们的修改在能够即时反映出来。但是注意浏览器会做一定的Cache导致某些改动没有立即显示出来，这时可以使用Incognito / Private Mode。
 
+执行以下命令来启动我们的应用
 ```shell
 FLASK_DEBUG=1 FLASK_APP=./2.3._Complex/demo.py python -m flask run --host=10.123.150.78 --port=7777
 ```
