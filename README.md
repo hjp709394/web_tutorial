@@ -12,19 +12,17 @@
    2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
-   2.5. Inter-action  
-   2.6. Create more pages  
-   2.7. Design database  
-   2.8. Reference  
-   2.9. Other  
+   2.5. Reference  
+   2.6. Other  
  3. Deploy to AWS / Azure  
  4. Other topics  
    3.1. Project structure  
-   3.2. ORM  
-   3.3. Blueprint  
-   3.4. Reference  
-   3.5. Custom your bootstrap
-   3.6. NPM front-end package managerment  
+   2.2. Design database  
+   3.3. Login
+   3.4. Blueprint  
+   3.5. Reference  
+   3.6. Custom your bootstrap
+   3.7. NPM front-end package managerment  
  5. Other frameworks  
    4.1. ASP.net  
    4.2. Spring  
