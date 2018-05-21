@@ -17,12 +17,13 @@
  3. Deploy to AWS / Azure  
  4. Other topics  
    3.1. Project structure  
-   2.2. Design database  
+   2.2. Database  
    3.3. Login
    3.4. Blueprint  
    3.5. Reference  
    3.6. Custom your bootstrap
    3.7. NPM front-end package managerment  
+   3.8. Reference
  5. Other frameworks  
    4.1. ASP.net  
    4.2. Spring  
@@ -294,3 +295,15 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 [The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')  
 [Boostrap Sample of Different Layout](https://v4-alpha.getbootstrap.com/examples/ 'Bootstrap Sample')
 [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application 'Single Page Application')  
+
+
+# Other Topics
+
+## Database
+
+### 分页
+有时候需要显示用户所有的记录/图片，一次从服务器下载所有的图片是不切实际的，这个时候就会用到分页了。每次客户端从服务器请求一页数据，等用户滚动到页面底端再加载下一页的内容。
+
+
+## Reference
+[MySql - Best Way to Implement Paging](https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging 'MySql - Best Way to Implement Paging')

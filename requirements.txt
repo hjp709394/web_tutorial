@@ -4,4 +4,4 @@ virtualenv -p /usr/bin/python2 ./env
 source ./env/bin/activate
 
 # install required packages
-pip install flask Jinja2
+pip install flask Jinja2 flask-restful
