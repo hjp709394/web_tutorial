@@ -14,7 +14,7 @@ class UserAPI(Resource):
 
 class PostListAPI(Resource):
     def get(self, user_id, page_index):
-        return get_post_list(user_id)
+        return get_post_list(user_id, page_index)
 
 
 api.add_resource(UserAPI, '/api/v1.0/user_info/<int:user_id>')

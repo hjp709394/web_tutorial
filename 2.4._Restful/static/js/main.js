@@ -11,10 +11,10 @@ app.controller('user_controller', function($scope, $http) {
     });
 });
 
-app.controller('postList_controller', function($scope, $http) {
-  $http.get('/api/v1.0/post_list/0/0').
+app.controller('post_list_controller', function($scope, $http) {
+  $http.get('/api/v1.0/post_list/0/1').
     then(function(response) {
-      $scope.posts = response.data;
+      $scope.post_list = response.data;
     });
 });
 
