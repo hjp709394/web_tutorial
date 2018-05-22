@@ -12,12 +12,6 @@ app.controller('user_controller', function($scope, $http) {
     });
 });
 
-//app.controller('post_list_controller', function($scope, $http) {
-//  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
-//    then(function(response) {
-//      $scope.post_list = response.data;
-//    });
-//});
 
 app.controller('home_controller', function($scope, $http) {
   $http.get('/api/v1.0/post_list?user_id=0&display_at_home=true').
@@ -26,20 +20,23 @@ app.controller('home_controller', function($scope, $http) {
     });
 });
 
+
 app.controller('post_list_controller', function($scope, $http) {
+  $scope.page_index = 0;
   $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
     then(function(response) {
       $scope.post_list = response.data;
     });
-  $scope.page_index = 1;
 
   $scope.loadMorePost = function() {
+    $scope.page_index = $scope.page_index + 1
     $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false&page_index=' + $scope.page_index).
       then(function(response) {
-        $scope.page_index = $scope.page_index + 1
         var new_post_list = response.data;
-        for(var i = 0; i < new_post_list.length; i++) {
-          $scope.post_list.push( new_post_list[i] );
+        if (new_post_list.length != 0) {
+          for (var i = 0; i < new_post_list.length; i++) {
+            $scope.post_list.push( new_post_list[i] );
+          }
         }
       });
   };
