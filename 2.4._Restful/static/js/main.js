@@ -13,9 +13,15 @@ app.controller('user_controller', function($scope, $http) {
 });
 
 app.controller('post_list_controller', function($scope, $http) {
-  $http.get('/api/v1.0/post_list?user_id=0&page_index=0').
+  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
     then(function(response) {
       $scope.post_list = response.data;
     });
 });
 
+app.controller('home_controller', function($scope, $http) {
+  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=true').
+    then(function(response) {
+      $scope.post_list = response.data;
+    });
+});

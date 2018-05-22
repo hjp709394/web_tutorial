@@ -106,28 +106,24 @@
 
     <div class="tab-pane fade in show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-      <div class="container">
+      <div class="container" ng-controller="home_controller">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ul class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="{{ $index }}" class="active" ng-repeat-start="post in post_list" ng-if="$first"></li>
+            <li data-target="#myCarousel" data-slide-to="{{ $index }}" ng-repeat-end ng-if="!$first"></li>
           </ul>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="static/imgs/IMG_20180513_122504_642.jpg" alt="" style="max-height:500px; margin:auto;">
+            <div class="carousel-item active" ng-repeat-start="post in post_list" ng-if="$first">
+              <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:500px; margin:auto;">
             </div>
 
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="static/imgs/IMG_20180425_115542_590.jpg" alt="" style="max-height:500px; margin:auto;">
+            <div class="carousel-item" ng-repeat-end ng-if="!$first">
+              <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:500px; margin:auto;">
             </div>
 
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="static/imgs/IMG_20180425_123007_270.jpg" alt="" style="max-height:500px; margin:auto;">
-            </div>
           </div>
 
           <!-- Left and right controls -->

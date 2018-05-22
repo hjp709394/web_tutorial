@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template, send_from_directory
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api, Resource, reqparse, inputs
 from db import get_user, get_post_list, get_post_display_at_home
 
 app = Flask(__name__)
@@ -23,11 +23,15 @@ class PostListAPI(Resource):
         super(PostListAPI, self).__init__()
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('user_id', type=int, location='args', required=True)
-        self.parser.add_argument('page_index', type=int, location='args', required=True)
+        self.parser.add_argument('page_index', type=int, default=0, location='args', required=False)
+        self.parser.add_argument('display_at_home', type=inputs.boolean, default=False, location='args', required=False)
 
     def get(self):
         args = self.parser.parse_args()
-        return get_post_list(args['user_id'], args['page_index'])
+        if args['display_at_home']:
+            return get_post_display_at_home(args['user_id'])
+        else:
+            return get_post_list(args['user_id'], args['page_index'])
 
 
 api.add_resource(UserAPI, '/api/v1.0/user_info')

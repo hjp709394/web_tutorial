@@ -17,7 +17,7 @@ def get_post_list(uid, page_index):
     return json_db['post_list'][start_index:end_index]
 
 
-def get_post_display_at_home(uid=0):
+def get_post_display_at_home(uid):
     post = []
     for p in json_db['post_list']:
         if p['display_at_home']:
