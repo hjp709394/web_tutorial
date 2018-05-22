@@ -33,6 +33,14 @@
 }
 </style>
 
+<style type="text/css">
+.square {
+  background: #000;
+  width: 50vw;
+  height: 50vw;
+}
+</style>
+
 
 <!-- Change carousel control icon color -->
 <style type="text/css">
@@ -117,11 +125,15 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="carousel-item active" ng-repeat-start="post in post_list" ng-if="$first">
-              <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:500px; margin:auto;">
+              <div class="square" style="max-height:500px; margin:auto;">
+                <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
+              </div>
             </div>
 
             <div class="carousel-item" ng-repeat-end ng-if="!$first">
-              <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:500px; margin:auto;">
+              <div class="square" style="max-height:500px; margin:auto;">
+                <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
+              </div>
             </div>
 
           </div>
