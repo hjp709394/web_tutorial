@@ -28,11 +28,11 @@
  5. Other frameworks  
    5.1. ASP.net  
    5.2. Spring  
- 6. Open source reference
-   6.1 Bootstrap
-   6.2 React
-   6.3 Flask
-   6.4 Flask web site
+ 6. Open source reference  
+   6.1 Bootstrap  
+   6.2 Angular  
+   6.3 Flask  
+   6.4 Flask web site  
 
 
 # Goal
