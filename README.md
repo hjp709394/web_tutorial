@@ -17,13 +17,14 @@
  3. Deploy to AWS / Azure  
  4. Other topics  
    4.1. Project structure  
-   4.2. Database  
-   4.3. Login
-   4.4. Blueprint  
-   4.5. Reference  
-   4.6. Custom your bootstrap
-   4.7. NPM front-end package managerment  
-   4.8. Reference
+   4.2. Paging
+   4.3. Database  
+   4.4. Login
+   4.5. Blueprint  
+   4.6. Reference  
+   4.7. Custom your bootstrap
+   4.8. NPM front-end package managerment  
+   4.9. Reference
  5. Other frameworks  
    5.1. ASP.net  
    5.2. Spring  
