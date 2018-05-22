@@ -16,7 +16,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
 <script src="static/js/main.js"></script>
 
 <!-- Make sure proper renderring and touch zooming -->
@@ -102,7 +103,9 @@
 
   <div class="tab-content mt-3" id="myTabContent">
 
+
     <div class="tab-pane fade in show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
       <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -138,25 +141,27 @@
           </a>
         </div>
       </div>
+
     </div>
 
 
-		<div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+    <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
 
-<div class="card-columns" style="" ng-controller="post_list_controller">
-  <div class="card" ng-repeat="post in post_list">
-    <img class="card-img-top" ng-src="{{ post.img }}" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Color Run!!! GoGoGo...</h5>
-      <p class="card-text">Seattle Color Run (Or Color Walk maybe) was hosted on May 13rd this year. It was such a great fun to run in the color, jump around the bubbles and sing among friends. Some families came with their kids inside the baby carriage. Cute doggies are dyed with blue, red and yellow. You can visit this <a href="https://thecolorrun.com/locations/seattle/">website</a> if you need more information. </p>
-    </div>
-  </div>
-</div>
+      <div class="card-columns" style="" ng-controller="post_list_controller">
+        <div class="card" ng-repeat="post in post_list">
+          <img class="card-img-top" ng-src="{{ post.img }}" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text" ng-bind-html="post.text"></p>
+          </div>
+        </div>
+      </div>
 
     </div>
 
 
     <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
+
       <div class="row" ng-controller="user_controller">
         <div class="col-sm-6">
           <img class="img-fluid" ng-src="{{ portrait }}" alt="">
@@ -165,6 +170,7 @@
           <p style="font-size:20px" ng-repeat="sentence in about">{{ sentence }}</p>
         </div>
       </div>
+
     </div>
 
   </div>

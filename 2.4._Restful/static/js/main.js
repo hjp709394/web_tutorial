@@ -1,7 +1,7 @@
-var app = angular.module('main_app', []);
+var app = angular.module('main_app', ['ngSanitize']);
 
 app.controller('user_controller', function($scope, $http) {
-  $http.get('/api/v1.0/user_info/0').
+  $http.get('/api/v1.0/user_info?user_id=0').
     then(function(response) {
       $scope.name = response.data.name;
       $scope.quote = response.data.quote;
@@ -12,7 +12,7 @@ app.controller('user_controller', function($scope, $http) {
 });
 
 app.controller('post_list_controller', function($scope, $http) {
-  $http.get('/api/v1.0/post_list/0/1').
+  $http.get('/api/v1.0/post_list?user_id=0&page_index=0').
     then(function(response) {
       $scope.post_list = response.data;
     });

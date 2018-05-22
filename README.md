@@ -295,6 +295,7 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 [The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')  
 [Boostrap Sample of Different Layout](https://v4-alpha.getbootstrap.com/examples/ 'Bootstrap Sample')
 [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application 'Single Page Application')  
+[Flask-Restful Request Parsing](http://flask-restful.readthedocs.io/en/0.3.5/reqparse.html, 'Flask-Restful Request Parsing')
 
 
 # Other Topics
