@@ -12,19 +12,19 @@
    2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
-   2.5. Other  
-   2.6. Reference  
+   2.5. Paging
+   2.6. Other  
+   2.7. Reference  
  3. Deploy to AWS / Azure  
  4. Other topics  
    4.1. Project structure  
-   4.2. Paging
-   4.3. Database  
-   4.4. Login
-   4.5. Blueprint  
-   4.6. Reference  
-   4.7. Custom your bootstrap
-   4.8. NPM front-end package managerment  
-   4.9. Reference
+   4.2. Database  
+   4.3. Login
+   4.4. Blueprint  
+   4.5. Reference  
+   4.6. Custom your bootstrap
+   4.7. NPM front-end package managerment  
+   4.8. Reference
  5. Other frameworks  
    5.1. ASP.net  
    5.2. Spring  
@@ -280,6 +280,7 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 上一个例子内容是静态的，没有用到实时的渲染，每次添加新的图片都要修改模板文件。一般的做法是从数据库中读取资源（比如图片），然后动态地构造整个页面并渲染出来，这个功能就是我们之前提到的模板。模板功能既可以在服务器端实现，也可以在客户端实现。这个样例将会构建一个Restful的API，客户端调用API获取所需的资源，并动态渲染展现给用户。  
 
+## Paging
 
 ## Other  
 
