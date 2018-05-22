@@ -1,3 +1,4 @@
+// ngSanitize is necessary for ng-bind-html
 var app = angular.module('main_app', ['ngSanitize']);
 
 app.controller('user_controller', function($scope, $http) {
