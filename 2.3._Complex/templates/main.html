@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Meng-Jiang Is Gorgeous</title>
+<!--
+<link rel="stylesheet" type="text/css" href="FIXME">
+<script type="text/javascript" src="FIXME"></script>
+<style type="text/css">
+</style>
+-->
+
+<!-- boostrap 4 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- Make sure proper renderring and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- narrow the main area -->
+<style type="text/css">
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1000px;
+  }
+}
+</style>
+
+
+<!-- Change carousel control icon color -->
+<style type="text/css">
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+</style>
+
+
+<!-- Adjust column-count according to width -->
+<style type="text/css">
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="static/imgs/hdImg_a1fd3fa2e5ee8ef56627def908e1a3421474218595566.jpg" class="rounded-circle img-fluid" alt="Cinque Terre" style="max-height:150px; ">
+    </div>
+    <div class="col-sm-9">
+      <p style="font-size:32px">Cucumber Huang</p>
+      <p style="font-size:16px"><strong>"Meng-Jiang Is Gorgeous." -- Me</strong></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">About Me</a>
+    </li>
+  </ul>
+
+
+  <div class="tab-content mt-3" id="myTabContent">
+
+    <div class="tab-pane fade in show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ul>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="static/imgs/IMG_20180513_122504_642.jpg" alt="" style="max-height:500px; margin:auto;">
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="static/imgs/IMG_20180425_115542_590.jpg" alt="" style="max-height:500px; margin:auto;">
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="static/imgs/IMG_20180425_123007_270.jpg" alt="" style="max-height:500px; margin:auto;">
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+		<div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+
+<div class="card-columns" style="">
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180513_122504_642.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Color Run!!! GoGoGo...</h5>
+      <p class="card-text">Seattle Color Run (Or Color Walk maybe) was hosted on May 13rd this year. It was such a great fun to run in the color, jump around the bubbles and sing among friends. Some families came with their kids inside the baby carriage. Cute doggies are dyed with blue, red and yellow. You can visit this <a href="https://thecolorrun.com/locations/seattle/">website</a> if you need more information. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180421_224003_476.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">This is a thinker</h5>
+      <p class="card-text">The Thinker sculpture at Papua New Guinea Sculpture Garden of Stanford. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180425_005438_091.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Hoover Tower</h5>
+      <p class="card-text">Check the Hoover Tower and the fountain inside Stanfood University. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180425_115542_590.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Summer</h5>
+      <p class="card-text">My backyard. Beautiful, isn't it. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180425_123007_270.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Give me a big smile</h5>
+      <p class="card-text">The photo is taken while taking the ferry to Point No Point Light House. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/mmexport1526181908336-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Eat or Die</h5>
+      <p class="card-text">UW's Night Market on May 12nd. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180512_015812_100.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Good Evening Mount Rainier</h5>
+      <p class="card-text">You can see Mount Rainier at Microsoft's City Center Plaza. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20180402_152702_830.jpg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Looking Down from Hoover Tower</h5>
+      <p class="card-text">The fountain is just like one sapphire. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20170602_142330674_HDR-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Dancing on the water</h5>
+      <p class="card-text">Shot at the Rattlesnake Ledge Trail. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20170415_180432209-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Scar</h5>
+      <p class="card-text">It is just like a scar yet beautiful. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20170415_171847104-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Tulip Festival</h5>
+      <p class="card-text">Words could not describe it. The Skugit Valley Tupli Festival is hosted yearly and is a must-see. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20170211_130052373-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">Shoo Shoo Shoo</h5>
+      <p class="card-text">Seattle is a great place for ski-lovers. </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img class="card-img-top" src="static/imgs/IMG_20170206_082649683-01.jpeg" alt="">
+    <div class="card-body">
+      <h5 class="card-title">WFH</h5>
+      <p class="card-text">Work from home. Whoopee. </p>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
+      <div class="row">
+        <div class="col-sm-6">
+          <img class="img-fluid" src="static/imgs/mmexport1478146333151-01.jpeg" alt="">
+        </div>
+        <div class="col-sm-6">
+          <p style="font-size:20px">I am a software engineer at Microsoft. And I think Microsoft is the greatest company in the world. </p>
+          <p style="font-size:20px">I am Chinese and I love Chinese food. I could not live without rice. I love taking photos even though I am not good at it. </p>
+          <p style="font-size:20px">I have many weakness, but I have found one who is perfect. </p>
+          <p style="font-size:20px">Feel free to contact with emails if you like my photos. Email: huangjp.pku@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>

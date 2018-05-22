@@ -9,20 +9,30 @@
    1.6. Reference  
  2. Build an simple app using Flask & React  
    2.1. First Flask app  
-   2.2. Create a complexer page  
-   2.3. Inter-action  
-   2.4. Create more pages  
-   2.5. Design database  
-   2.6. Restful  
+   2.2. Template  
+   2.3. Create a more complex page  
+   2.4. Restful  
+   2.5. Infinite Scroll  
+   2.6. Other  
    2.7. Reference  
- 3. Other topics  
-   3.1. Project structure  
-   3.2. ORM  
-   3.3. Blueprint  
-   3.4. Reference  
- 4. Other frameworks  
-   4.1. ASP.net  
-   4.2. Spring  
+ 3. Deploy to AWS / Azure  
+ 4. Other topics  
+   4.1. Project structure  
+   4.2. Database / Paging  
+   4.3. Login  
+   4.4. Blueprint  
+   4.5. Reference  
+   4.6. Custom your bootstrap  
+   4.7. NPM front-end package managerment  
+   4.8. Reference
+ 5. Other frameworks  
+   5.1. ASP.net  
+   5.2. Spring  
+ 6. Open source reference  
+   6.1 Bootstrap  
+   6.2 Angular  
+   6.3 Flask  
+   6.4 Flask web site  
 
 
 # Goal
@@ -121,11 +131,11 @@ public class HelloHTTPHandler : IHttpHandler
 
 
 ## Request & Response 
-打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/any/route?name=MengJiang
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/any/route?name=Meng-Jiang
 
 
 ## Routing
-打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=MengJiang
+打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/say/something/professional?name=Meng-Jiang
 
 
 ## Flask code  
@@ -212,3 +222,93 @@ Template
 
 ## Reference
 * [Build Python Web Framework](http://ningning.today/2017/08/05/web/build-python-web-framework/ 'Implement a web framework')
+
+
+# Build an simple app using Flask & React  
+
+我们这里后端使用的是Flask框架，它实现了路由，Requst/Response的抽象，Session，页面在Server-side的渲染，登录验证等等功能。
+
+前端的框架可以分为两类：CSS框架和JavaScript框架。
+
+CSS框架负责展现，一般会提供各种各样的UI组件比如：按钮，表格，下拉列表，警告框，Tab，字体排版，Carousel等等。我们这里使用Bootstrap。
+
+JavaScript负责交互，JavaScript框架能够帮助我们更好地达到这个目标。过去我们常常是在Server渲染页面，然后返回渲染好的页面给用户，这样大多数的运算负载都发生在Server端，另一种方式是在Server端构建Restful的API，Client通过调用这些API获得所需的数据，并利用这些数据对页面进行渲染。JavaScript为达到这个目标通常会提供的功能：  
+1. Client-side routing  
+2. templating  
+3. 第一轮的model validation  
+4. 构建表格  
+5. 分页   
+
+Javascript框架这里我们使用Angular，由谷歌维护。其他well-support的框架有React，由facebook维护。
+
+
+## First Flask app  
+执行以下命令：
+``` shell
+FLASK_APP=./2.1._FirstFlaskApp/demo.py python -m flask run --host=<your-ip-address> --port=<your-port-number>
+```
+然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/
+
+
+## Template
+执行以下命令：
+``` shell
+FLASK_APP=./2.2._Template/demo.py python -m flask run --host=<your-ip-address> --port=<your-port-number>
+```
+然后打开浏览器访问以下网址：http://&lt;your-ip-address&gt;:&lt;your-port-number&gt;/
+
+有了Template我们终于可以开始构建一个稍微复杂一点的页面了。
+
+## Create a more complex page  
+
+这部分主要需要的是HTML和CSS的知识。 
+
+为了方便开发，我么使用Flask的Debug模式，这样每次访问页面会重新加载资源文件，这样我们的修改在能够即时反映出来。但是注意浏览器会做一定的Cache导致某些改动没有立即显示出来，这时可以使用Incognito / Private Mode。
+
+执行以下命令来启动我们的应用
+```shell
+FLASK_DEBUG=1 FLASK_APP=./2.3._Complex/demo.py python -m flask run --host=10.123.150.78 --port=7777
+```
+
+可以看到这个终于有点像我们平时看到的网站了，暂时并没有使用到除了HTML和CSS之外的内容，后面会尝试新的技术。
+
+在这个例子里我们使用了Bootstrap这个css框架，我们主要用到了Tab-Pane组件，Carousel组件和Card组件。整个应用都只包含一个页面，我们称为Single Page Application（SAP），当然通常意义上的SAP应用会使用JS来跟服务器交互，在客户端动态渲染页面。Card组件帮助我们实现了瀑布流的效果（Masonry Layouts），这是图片类应用常用的布局，能够将不同尺寸的图片自然地排版到同一个页面。
+
+Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个页面会根据访问设备的尺寸自适应地调整布局，适应PC和Mobile端的访问。尝试调整浏览页的窗口宽度体会这个功能。  
+
+## Restful
+
+上一个例子内容是静态的，没有用到实时的渲染，每次添加新的图片都要修改模板文件。一般的做法是从数据库中读取资源（比如图片），然后动态地构造整个页面并渲染出来，这个功能就是我们之前提到的模板。模板功能既可以在服务器端实现，也可以在客户端实现。这个样例将会构建一个Restful的API，客户端调用API获取所需的资源，并动态渲染展现给用户。  
+
+## Paging  
+
+使用ngInfiniteScroll实现滚动到底部自动加载下一页。参考[ngInfiniteScroll](http://sroze.github.io/ngInfiniteScroll/index.html 'ngInfiniteScroll')。
+
+## Other  
+
+Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstrap Themes](https://themes.getbootstrap.com/ 'bootstrap themes')  
+
+Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode') 。浏览器通常会帮我们cache很多静态的资源，这样我们的改动就没办法即时显示出来，为解决这个问题我们可以在Chrome的Dev Tool里禁用cache，参考[Disabling Chrome Cache](https://stackoverflow.com/questions/5690269/disabling-chrome-cache-for-website-development, 'Disabling Chrome Cache')。
+
+Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，为了处理这个问题，例子中使用css创建正方形的div，并将图片居中放置在div中。  
+
+## Reference  
+[Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
+[使用Python和Flask设计Restful API](http://www.pythondoc.com/flask-restful/first.html 'Restful API with Flask')  
+[A Beginner's Guide to CSS Front End Frameworks](https://blog.zipboard.co/a-beginners-guide-to-css-front-end-frameworks-8045a499456b 'A Beginner\'s Guide to CSS Front End Frameworks')  
+[The What and Why of Javascript Frameworks](https://artandlogic.com/2015/05/the-what-and-why-of-javascript-frameworks/ 'The What and Why of Javascript Frameworks')  
+[Boostrap Sample of Different Layout](https://v4-alpha.getbootstrap.com/examples/ 'Bootstrap Sample')
+[Single Page Application](https://en.wikipedia.org/wiki/Single-page_application 'Single Page Application')  
+[Flask-Restful Request Parsing](http://flask-restful.readthedocs.io/en/0.3.5/reqparse.html, 'Flask-Restful Request Parsing')
+
+
+# Other Topics
+
+## Database
+
+### 分页
+有时候需要显示用户所有的记录/图片，一次从服务器下载所有的图片是不切实际的，这个时候就会用到分页了。每次客户端从服务器请求一页数据，等用户滚动到页面底端再加载下一页的内容。简单的分页在关系型数据库中用limit语句就可以了，大量的数据需要考虑性能问题，可以参考后面的Reference中链接。
+
+
+## Reference
+[MySql - Best Way to Implement Paging](https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging 'MySql - Best Way to Implement Paging')

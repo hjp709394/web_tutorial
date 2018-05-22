@@ -9,7 +9,7 @@ from response import Response
 
 @request_response_application
 def application(request):
-    name = request.args.get('name', 'MengJiang')
+    name = request.args.get('name', 'Meng-Jiang')
     return Response(['{name} is diligent'.format(name=name)])
 
 
