@@ -12,17 +12,17 @@
    2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
-   2.5. Infinite Scroll
+   2.5. Infinite Scroll  
    2.6. Other  
    2.7. Reference  
  3. Deploy to AWS / Azure  
  4. Other topics  
    4.1. Project structure  
-   4.2. Database / Paging
-   4.3. Login
+   4.2. Database / Paging  
+   4.3. Login  
    4.4. Blueprint  
    4.5. Reference  
-   4.6. Custom your bootstrap
+   4.6. Custom your bootstrap  
    4.7. NPM front-end package managerment  
    4.8. Reference
  5. Other frameworks  
