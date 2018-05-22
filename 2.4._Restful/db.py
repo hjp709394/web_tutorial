@@ -18,8 +18,4 @@ def get_post_list(uid, page_index):
 
 
 def get_post_display_at_home(uid):
-    post = []
-    for p in json_db['post_list']:
-        if p['display_at_home']:
-            post.append(p)
-    return post
+    return json_db['post_display_at_home']

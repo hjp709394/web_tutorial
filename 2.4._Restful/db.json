@@ -16,81 +16,75 @@
     {
       "img": "static/imgs/IMG_20180513_122504_642.jpg", 
       "title": "Color Run!!! GoGoGo...",
-      "text": "Seattle Color Run (Or Color Walk maybe) was hosted on May 13rd this year. It was such a great fun to run in the color, jump around the bubbles and sing among friends. Some families came with their kids inside the baby carriage. Cute doggies are dyed with blue, red and yellow. You can visit this <a href=\"https://thecolorrun.com/locations/seattle/\">website</a> if you need more information.",
-      "display_at_home": true
+      "text": "Seattle Color Run (Or Color Walk maybe) was hosted on May 13rd this year. It was such a great fun to run in the color, jump around the bubbles and sing among friends. Some families came with their kids inside the baby carriage. Cute doggies are dyed with blue, red and yellow. You can visit this <a href=\"https://thecolorrun.com/locations/seattle/\">website</a> if you need more information."
     },
     {
       "img": "static/imgs/IMG_20180421_224003_476.jpg", 
       "title": "This is a thinker",
-      "text": "The Thinker sculpture at Papua New Guinea Sculpture Garden of Stanford.",
-      "display_at_home": false
+      "text": "The Thinker sculpture at Papua New Guinea Sculpture Garden of Stanford."
     },
     {
       "img": "static/imgs/IMG_20180425_005438_091.jpg", 
       "title": "Hoover Tower",
-      "text": "Check the Hoover Tower and the fountain inside Stanfood University.",
-      "display_at_home": false
+      "text": "Check the Hoover Tower and the fountain inside Stanfood University."
     },
     {
       "img": "static/imgs/IMG_20180425_115542_590.jpg", 
       "title": "Summer",
-      "text": "My backyard. Beautiful, isn't it.",
-      "display_at_home": true
+      "text": "My backyard. Beautiful, isn't it."
     },
     {
       "img": "static/imgs/IMG_20180425_123007_270.jpg", 
       "title": "Give me a big smile",
-      "text": "The photo is taken while taking the ferry to Point No Point Light House.",
-      "display_at_home": true
+      "text": "The photo is taken while taking the ferry to Point No Point Light House."
     },
     {
       "img": "static/imgs/mmexport1526181908336-01.jpeg", 
       "title": "Eat or Die",
-      "text": "UW's Night Market on May 12nd.",
-      "display_at_home": false
+      "text": "UW's Night Market on May 12nd."
     },
     {
       "img": "static/imgs/IMG_20180512_015812_100.jpg", 
       "title": "Good Evening Mount Rainier",
-      "text": "You can see Mount Rainier at Microsoft's City Center Plaza.",
-      "display_at_home": false
+      "text": "You can see Mount Rainier at Microsoft's City Center Plaza."
     },
     {
       "img": "static/imgs/IMG_20180402_152702_830.jpg", 
       "title": "Looking Down from Hoover Tower",
-      "text": "The fountain is just like one sapphire.",
-      "display_at_home": false
+      "text": "The fountain is just like one sapphire."
     },
     {
       "img": "static/imgs/IMG_20170602_142330674_HDR-01.jpeg", 
       "title": "Dancing on the water",
-      "text": "Shot at the Rattlesnake Ledge Trail.",
-      "display_at_home": false
+      "text": "Shot at the Rattlesnake Ledge Trail."
     },
     {
       "img": "static/imgs/IMG_20170415_180432209-01.jpeg", 
       "title": "Scar",
-      "text": "It is just like a scar yet beautiful.",
-      "display_at_home": false
+      "text": "It is just like a scar yet beautiful."
     },
     {
       "img": "static/imgs/IMG_20170415_171847104-01.jpeg", 
       "title": "Tulip Festival",
-      "text": "Words could not describe it. The Skugit Valley Tupli Festival is hosted yearly and is a must-see.",
-      "display_at_home": false
+      "text": "Words could not describe it. The Skugit Valley Tupli Festival is hosted yearly and is a must-see."
     },
     {
       "img": "static/imgs/IMG_20170211_130052373-01.jpeg", 
       "title": "Shoo Shoo Shoo",
-      "text": "Seattle is a great place for ski-lovers.",
-      "display_at_home": false
+      "text": "Seattle is a great place for ski-lovers."
     },
     {
       "img": "static/imgs/IMG_20170206_082649683-01.jpeg", 
       "title": "WFH",
-      "text": "Work from home. Whoopee.",
-      "display_at_home": false
+      "text": "Work from home. Whoopee."
     }
+  ],
+
+  "post_display_at_home": [
+    {"img": "static/imgs/IMG_20180513_122504_642.jpg"},
+    {"img": "static/imgs/IMG_20180425_115542_590.jpg"},
+    {"img": "static/imgs/IMG_20170211_130052373-01.jpeg"},
+    {"img": "static/imgs/IMG_20170415_180432209-01.jpeg"}
   ]
 }
 
