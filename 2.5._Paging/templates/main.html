@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Meng-Jiang Is Perfect</title>
+<!--
+<link rel="stylesheet" type="text/css" href="FIXME">
+<script type="text/javascript" src="FIXME"></script>
+<style type="text/css">
+</style>
+-->
+
+<!-- boostrap 4 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/css/main.css">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script> <!-- ngSanitize is needed for ng-bind-html -->
+<script src="static/js/main.js"></script>
+
+<!-- Make sure proper renderring and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- narrow the main area -->
+<style type="text/css">
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1000px;
+  }
+}
+</style>
+
+
+<!-- Adjust column-count according to width -->
+<style type="text/css">
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+</style>
+
+
+</head>
+
+
+<body ng-app="main_app">
+
+
+<div class="container mt-5" ng-controller="user_controller">
+  <div class="row">
+    <div class="col-sm-3">
+      <img ng-src="{{ profile_photo }}" class="rounded-circle img-fluid" alt="Cinque Terre" style="max-height:150px; ">
+    </div>
+    <div class="col-sm-9">
+      <p style="font-size:32px">{{ name }}</p>
+      <p style="font-size:16px"><strong>{{ quote }}</strong></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-3">
+
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="false">All</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="false">About Me</a>
+    </li>
+  </ul>
+
+
+  <div class="tab-content mt-3" id="myTabContent">
+
+
+    <div class="tab-pane fade in show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+      <div class="container" ng-controller="home_controller">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="{{ $index }}" class="active" ng-repeat-start="post in post_list" ng-if="$first"></li>
+            <li data-target="#myCarousel" data-slide-to="{{ $index }}" ng-repeat-end ng-if="!$first"></li>
+          </ul>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active" ng-repeat-start="post in post_list" ng-if="$first">
+              <div class="square align-center" style="max-height:500px; margin:auto; ">
+                <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
+              </div>
+            </div>
+
+            <div class="carousel-item" ng-repeat-end ng-if="!$first">
+              <div class="square align-center" style="max-height:500px; margin:auto; ">
+                <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
+
+      <div class="card-columns" style="" ng-controller="post_list_controller">
+        <div class="card" ng-repeat="post in post_list">
+          <img class="card-img-top" ng-src="{{ post.img }}" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text" ng-bind-html="post.text"></p> <!-- ng-bind-html is useful when the text is of html format -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
+
+      <div class="row" ng-controller="user_controller">
+        <div class="col-sm-6">
+          <img class="img-fluid" ng-src="{{ portrait }}" alt="">
+        </div>
+        <div class="col-sm-6">
+          <p style="font-size:20px" ng-repeat="sentence in about">{{ sentence }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+
+
+</html>
