@@ -1,5 +1,5 @@
 // ngSanitize is necessary for ng-bind-html
-var app = angular.module('main_app', ['ngSanitize']);
+var app = angular.module('main_app', ['ngSanitize', 'infinite-scroll']);
 
 app.controller('user_controller', function($scope, $http) {
   $http.get('/api/v1.0/user_info?user_id=0').
@@ -12,12 +12,12 @@ app.controller('user_controller', function($scope, $http) {
     });
 });
 
-app.controller('post_list_controller', function($scope, $http) {
-  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
-    then(function(response) {
-      $scope.post_list = response.data;
-    });
-});
+//app.controller('post_list_controller', function($scope, $http) {
+//  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
+//    then(function(response) {
+//      $scope.post_list = response.data;
+//    });
+//});
 
 app.controller('home_controller', function($scope, $http) {
   $http.get('/api/v1.0/post_list?user_id=0&display_at_home=true').
@@ -25,3 +25,23 @@ app.controller('home_controller', function($scope, $http) {
       $scope.post_list = response.data;
     });
 });
+
+app.controller('post_list_controller', function($scope, $http) {
+  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
+    then(function(response) {
+      $scope.post_list = response.data;
+    });
+  $scope.page_index = 1;
+
+  $scope.loadMorePost = function() {
+    $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false&page_index=' + $scope.page_index).
+      then(function(response) {
+        $scope.page_index = $scope.page_index + 1
+        var new_post_list = response.data;
+        for(var i = 0; i < new_post_list.length; i++) {
+          $scope.post_list.push( new_post_list[i] );
+        }
+      });
+  };
+});
+

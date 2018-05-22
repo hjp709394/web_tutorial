@@ -19,6 +19,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script> <!-- ngSanitize is needed for ng-bind-html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.0.0/ng-infinite-scroll.min.js"></script>
 <script src="static/js/main.js"></script>
 
 <!-- Make sure proper renderring and touch zooming -->
@@ -136,11 +137,13 @@
     <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
 
       <div class="card-columns" style="" ng-controller="post_list_controller">
-        <div class="card" ng-repeat="post in post_list">
-          <img class="card-img-top" ng-src="{{ post.img }}" alt="">
-          <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
-            <p class="card-text" ng-bind-html="post.text"></p> <!-- ng-bind-html is useful when the text is of html format -->
+        <div infinite-scroll='loadMorePost()' infinite-scroll-distance='2'>
+          <div class="card" ng-repeat="post in post_list">
+            <img class="card-img-top" ng-src="{{ post.img }}" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text" ng-bind-html="post.text"></p> <!-- ng-bind-html is useful when the text is of html format -->
+            </div>
           </div>
         </div>
       </div>
