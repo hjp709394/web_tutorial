@@ -11,9 +11,13 @@
 
 <!-- boostrap 4 -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="static/js/main.js"></script>
 
 <!-- Make sure proper renderring and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,17 +69,17 @@
 </head>
 
 
-<body>
+<body ng-app="main">
 
 
-<div class="container mt-5">
+<div class="container mt-5" ng-controller="user">
   <div class="row">
     <div class="col-sm-3">
-      <img src="static/imgs/hdImg_a1fd3fa2e5ee8ef56627def908e1a3421474218595566.jpg" class="rounded-circle img-fluid" alt="Cinque Terre" style="max-height:150px; ">
+      <img ng-src="{{ profile_photo }}" class="rounded-circle img-fluid" alt="Cinque Terre" style="max-height:150px; ">
     </div>
     <div class="col-sm-9">
-      <p style="font-size:32px">Cucumber Huang</p>
-      <p style="font-size:16px"><strong>"Meng-Jiang Is Gorgeous" -- Me</strong></p>
+      <p style="font-size:32px">{{ name }}</p>
+      <p style="font-size:16px"><strong>{{ quote }}</strong></p>
     </div>
   </div>
 </div>
@@ -250,15 +254,12 @@
 
 
     <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
-      <div class="row">
+      <div class="row" ng-controller="user">
         <div class="col-sm-6">
-          <img class="img-fluid" src="static/imgs/mmexport1478146333151-01.jpeg" alt="">
+          <img class="img-fluid" ng-src="{{ portrait }}" alt="">
         </div>
         <div class="col-sm-6">
-          <p style="font-size:20px">I am a software engineer at Microsoft. And I think Microsoft is the greatest company in the world. </p>
-          <p style="font-size:20px">I am Chinese and I love Chinese food. I could not live without rice. I love taking photos even though I am not good at it. </p>
-          <p style="font-size:20px">I just found the most gorgeous girl I have ever seen. </p>
-          <p style="font-size:20px">Feel free to contact with emails if you like my photos. Email: huangjp.pku@gmail.com</p>
+          <p style="font-size:20px" ng-repeat="sentence in about">{{ sentence }}</p>
         </div>
       </div>
     </div>

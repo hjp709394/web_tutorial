@@ -6,11 +6,13 @@
       "I am a software engineer at Microsoft. And I think Microsoft is the greatest company in the world.",
       "I am Chinese and I love Chinese food. I could not live without rice. I love taking photos even though I am not good at it.",
       "I just found the most gorgeous girl I have ever seen.",
-      "Feel free to contact with emails if you like my photos. Email: huangjp.pku@gmail.com"
-    ]
+      "Feel free to contact with email if you like my photos. Email: huangjp.pku@gmail.com "
+    ],
+    "portrait": "static/imgs/mmexport1478146333151-01.jpeg",
+    "profile_photo": "static/imgs/hdImg_a1fd3fa2e5ee8ef56627def908e1a3421474218595566.jpg"
   },
 
-  "post": [
+  "post_list": [
     {
       "img": "static/imgs/IMG_20180513_122504_642.jpg", 
       "title": "Color Run!!! GoGoGo...",
