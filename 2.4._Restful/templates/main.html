@@ -131,13 +131,13 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="carousel-item active" ng-repeat-start="post in post_list" ng-if="$first">
-              <div class="square col-md-12 align-center" style="max-height:500px; margin:auto; ">
+              <div class="square align-center" style="max-height:500px; margin:auto; ">
                 <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
               </div>
             </div>
 
             <div class="carousel-item" ng-repeat-end ng-if="!$first">
-              <div class="square col-md-12 align-center" style="max-height:500px; margin:auto; ">
+              <div class="square align-center" style="max-height:500px; margin:auto; ">
                 <img class="d-block img-fluid" ng-src="{{ post.img }}" alt="" style="max-height:100%; margin:auto;">
               </div>
             </div>
