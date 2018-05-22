@@ -12,13 +12,13 @@
    2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
-   2.5. Paging
+   2.5. Infinite Scroll
    2.6. Other  
    2.7. Reference  
  3. Deploy to AWS / Azure  
  4. Other topics  
    4.1. Project structure  
-   4.2. Database  
+   4.2. Database / Paging
    4.3. Login
    4.4. Blueprint  
    4.5. Reference  
@@ -282,7 +282,7 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 ## Paging  
 
-使用ngInfiniteScroll实现滚动到底部自动加载下一页。
+使用ngInfiniteScroll实现滚动到底部自动加载下一页。参考[ngInfiniteScroll](http://sroze.github.io/ngInfiniteScroll/index.html 'ngInfiniteScroll')。
 
 ## Other  
 
@@ -290,7 +290,7 @@ Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstra
 
 Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode') 。浏览器通常会帮我们cache很多静态的资源，这样我们的改动就没办法即时显示出来，为解决这个问题我们可以在Chrome的Dev Tool里禁用cache，参考[Disabling Chrome Cache](https://stackoverflow.com/questions/5690269/disabling-chrome-cache-for-website-development, 'Disabling Chrome Cache')。
 
-Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，最好是服务器存有一份等边长的图片，比如高度都一样的图片，方便在Carousel中显示。  
+Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，为了处理这个问题，例子中使用css创建正方形的div，并将图片居中放置在div中。  
 
 ## Reference  
 [Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
