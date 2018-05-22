@@ -1,6 +1,6 @@
-var app = angular.module('maina', []);
+var app = angular.module('main_app', []);
 
-app.controller('userController', function($scope, $http) {
+app.controller('user_controller', function($scope, $http) {
   $http.get('/api/v1.0/user_info/0').
     then(function(response) {
       $scope.name = response.data.name;
@@ -11,7 +11,7 @@ app.controller('userController', function($scope, $http) {
     });
 });
 
-app.controller('postListController', function($scope, $http) {
+app.controller('postList_controller', function($scope, $http) {
   $http.get('/api/v1.0/post_list/0/0').
     then(function(response) {
       $scope.posts = response.data;

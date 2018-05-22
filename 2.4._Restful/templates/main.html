@@ -69,10 +69,10 @@
 </head>
 
 
-<body ng-app="main">
+<body ng-app="main_app">
 
 
-<div class="container mt-5" ng-controller="user">
+<div class="container mt-5" ng-controller="user_controller">
   <div class="row">
     <div class="col-sm-3">
       <img ng-src="{{ profile_photo }}" class="rounded-circle img-fluid" alt="Cinque Terre" style="max-height:150px; ">
@@ -254,7 +254,7 @@
 
 
     <div class="tab-pane fade" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
-      <div class="row" ng-controller="user">
+      <div class="row" ng-controller="user_controller">
         <div class="col-sm-6">
           <img class="img-fluid" ng-src="{{ portrait }}" alt="">
         </div>

@@ -284,7 +284,7 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstrap Themes](https://themes.getbootstrap.com/ 'bootstrap themes')  
 
-Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode')  
+Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode') 。浏览器通常会帮我们cache很多静态的资源，这样我们的改动就没办法即时显示出来，为解决这个问题我们可以在Chrome的Dev Tool里禁用cache，参考[Disabling Chrome Cache](https://stackoverflow.com/questions/5690269/disabling-chrome-cache-for-website-development, 'Disabling Chrome Cache')
 
 Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，最好是服务器存有一份等边长的图片，比如高度都一样的图片，方便在Carousel中显示。  
 
