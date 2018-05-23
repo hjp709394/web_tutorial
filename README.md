@@ -19,7 +19,7 @@
  4. Other topics  
    4.1. Project structure  
    4.2. Database / Paging  
-   4.3. Login  
+   4.3. Login / HTTPS
    4.4. Blueprint  
    4.5. Reference  
    4.6. Custom your bootstrap  
@@ -310,7 +310,19 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 ## Register your domain
 在[Godaddy](https://www.godaddy.com/ 'Godaddy')上注册喜欢的域名。这里已经注册了mengjiang.org。
 
-## Set up your AWS account
+## Set up your AWS account  
+
+注册一个AWS账户，会有一年的免费试用。  
+
+创建Elastic IP，参考[Get A Domain](https://aws.amazon.com/cn/getting-started/tutorials/get-a-domain/ 'Get A Domain')。  
+
+创建EC2实例，参考[Amazon EC2](https://aws.amazon.com/cn/getting-started/tutorials/launch-a-wordpress-website/ 'Amazon EC2')。  
+
+关联Elastic IP和EC2实例，参考[Get A Domain](https://aws.amazon.com/cn/getting-started/tutorials/get-a-domain/, 'Get A Domain')。  
+
+创建Security Group，在[EC2 Console](https://console.aws.amazon.com/ec2, 'EC2 Console')中点击Create Security Group，允许TCP 22端口，以及HTTP 80，5000端口的进流量，允许所有的出流量。在EC2 Console的Network Interface里，点击Action - Change Security Groups，然后选择创建的Security Group。这个时候就可以访问我们的服务器了。
+
+注意，Flask的默认端口是5000，这里为了方便我们把5000端口的访问权限打开了，但是为了安全性的考虑，正确的做法是在Security Group中为HTTP只打开80端口，用其他服务器比如Nginx监听80端口，并将请求分发给flask。
 
 
 # Other Topics  
