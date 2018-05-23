@@ -278,8 +278,11 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 ## Restful
 
-上一个例子内容是静态的，没有用到实时的渲染，每次添加新的图片都要修改模板文件。一般的做法是从数据库中读取资源（比如图片），然后动态地构造整个页面并渲染出来，这个功能就是我们之前提到的模板。模板功能既可以在服务器端实现，也可以在客户端实现。这个样例将会构建一个Restful的API，客户端调用API获取所需的资源，并动态渲染展现给用户。  
+上一个例子内容是静态的，没有用到实时的渲染，每次添加新的图片都要修改模板文件。一般的做法是从数据库中读取资源（比如图片），然后动态地构造整个页面并渲染出来，这个功能就是我们之前提到的模板。模板功能既可以在服务器端实现，也可以在客户端实现。这个样例将会构建一个Restful的API，客户端使用Angular调用API获取所需的资源，并动态渲染展现给用户。  
 
+注意到我们服务器端并没有使用到模板的功能，所以在代码里不再使用render\_template函数，而是直接将html返回到客户端。这是为了方便而采用的做法，静态网页一般使用Apache等服务器，他们针对静态资源做了优化，性能优于动态网页服务器（比如Tomcat），也更加稳定可靠。  
+
+模板功能这里是在前端用Angular实现的，这是现在普遍的做法。相比前一节纯静态网页的代码，可以这一节中使用Angular渲染页面的做法使得代码更加容易维护，数据层和显示层也分离开了。  
 ## Paging  
 
 使用ngInfiniteScroll实现滚动到底部自动加载下一页。参考[ngInfiniteScroll](http://sroze.github.io/ngInfiniteScroll/index.html 'ngInfiniteScroll')。
@@ -302,13 +305,21 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 [Flask-Restful Request Parsing](http://flask-restful.readthedocs.io/en/0.3.5/reqparse.html, 'Flask-Restful Request Parsing')
 
 
-# Other Topics
+# Deploy to AWS / Azure  
 
-## Database
+## Register your domain
+在[Godaddy](https://www.godaddy.com/ 'Godaddy')上注册喜欢的域名。这里已经注册了mengjiang.org。
 
-### 分页
+## Set up your AWS account
+
+
+# Other Topics  
+
+## Database  
+
+### 分页  
 有时候需要显示用户所有的记录/图片，一次从服务器下载所有的图片是不切实际的，这个时候就会用到分页了。每次客户端从服务器请求一页数据，等用户滚动到页面底端再加载下一页的内容。简单的分页在关系型数据库中用limit语句就可以了，大量的数据需要考虑性能问题，可以参考后面的Reference中链接。
 
 
-## Reference
+## Reference  
 [MySql - Best Way to Implement Paging](https://stackoverflow.com/questions/3799193/mysql-data-best-way-to-implement-paging 'MySql - Best Way to Implement Paging')
