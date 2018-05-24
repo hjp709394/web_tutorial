@@ -335,7 +335,7 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 安装mod\_wsgi：sudo apt-get install libapache2-mod-wsgi  
 
 配置wsgi和Apache，参考[mod\_wsgi](http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/, 'mod\_wsgi')和[Deploy Flask App](https://plwang.github.io/2016/10/21/DeployFlaskUsingApache/, 'Deploy Flask App')。  
-注意：1 使用Apache服务器，应用需要存放在 /var/www 目录下；2 如果遇到错误，可以查看 /var/log/apache2/error.log 文件进行Debug。  
+注意：1 使用Apache服务器，应用需要存放在 /var/www 目录下；2 如果遇到错误，可以查看 /var/log/apache2/error.log 文件进行Debug。在目录下面提供了mj.wsgi和mj.conf（Apache的配置文件，应该放在/etc/apache2/sites-enabled目录下）。  
 
 # Other Topics  
 
