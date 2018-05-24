@@ -283,6 +283,7 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 注意到我们服务器端并没有使用到模板的功能，所以在代码里不再使用render\_template函数，而是直接将html返回到客户端。这是为了方便而采用的做法，静态网页一般使用Apache等服务器，他们针对静态资源做了优化，性能优于动态网页服务器（比如Tomcat），也更加稳定可靠。  
 
 模板功能这里是在前端用Angular实现的，这是现在普遍的做法。相比前一节纯静态网页的代码，可以这一节中使用Angular渲染页面的做法使得代码更加容易维护，数据层和显示层也分离开了。  
+
 ## Paging  
 
 使用ngInfiniteScroll实现滚动到底部自动加载下一页。参考[ngInfiniteScroll](http://sroze.github.io/ngInfiniteScroll/index.html 'ngInfiniteScroll')。
@@ -322,7 +323,17 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 
 创建Security Group，在[EC2 Console](https://console.aws.amazon.com/ec2, 'EC2 Console')中点击Create Security Group，允许TCP 22端口，以及HTTP 80，5000端口的进流量，允许所有的出流量。在EC2 Console的Network Interface里，点击Action - Change Security Groups，然后选择创建的Security Group。这个时候就可以访问我们的服务器了。
 
-注意，Flask的默认端口是5000，这里为了方便我们把5000端口的访问权限打开了，但是为了安全性的考虑，正确的做法是在Security Group中为HTTP只打开80端口，用其他服务器比如Nginx监听80端口，并将请求分发给flask。
+注意，Flask的默认端口是5000，这里为了方便我们把5000端口的访问权限打开了。Flask本身并不是一个Web服务器，其自带的服务器从性能和安全性考虑并不适合作为生产环境的服务器，正确的做法是在Security Group中为HTTP只打开80端口，用其他服务器比如Nginx监听80端口，并将请求分发给flask。
+
+配置DNS，参考[Get A Domain](https://aws.amazon.com/cn/getting-started/tutorials/get-a-domain/, 'Get A Domain')。
+
+## Deploy
+
+这里使用mod\_wsgi和apache做部署。
+
+在EC2实例中安装Apache：sudo apt install apache2  
+安装mod\_wsgi：sudo apt-get install libapache2-mod-wsgi  
+
 
 
 # Other Topics  
