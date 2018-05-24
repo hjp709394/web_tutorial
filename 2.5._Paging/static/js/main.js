@@ -23,13 +23,15 @@ app.controller('home_controller', function($scope, $http) {
 
 app.controller('post_list_controller', function($scope, $http) {
   $scope.page_index = 0;
-  $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
-    then(function(response) {
-      $scope.post_list = response.data;
-    });
+  $scope.post_list = [];
+  $scope.busy = false
+  //$http.get('/api/v1.0/post_list?user_id=0&display_at_home=false').
+  //  then(function(response) {
+  //    $scope.post_list = response.data;
+  //  });
 
   $scope.loadMorePost = function() {
-    $scope.page_index = $scope.page_index + 1
+    $scope.busy = true;
     $http.get('/api/v1.0/post_list?user_id=0&display_at_home=false&page_index=' + $scope.page_index).
       then(function(response) {
         var new_post_list = response.data;
@@ -38,6 +40,8 @@ app.controller('post_list_controller', function($scope, $http) {
             $scope.post_list.push( new_post_list[i] );
           }
         }
+	$scope.page_index = $scope.page_index + 1
+        $scope.busy = false;
       });
   };
 });
