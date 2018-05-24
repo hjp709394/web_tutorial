@@ -325,7 +325,7 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 
 注意，Flask的默认端口是5000，这里为了方便我们把5000端口的访问权限打开了。Flask本身并不是一个Web服务器，其自带的服务器从性能和安全性考虑并不适合作为生产环境的服务器，正确的做法是在Security Group中为HTTP只打开80端口，用其他服务器比如Nginx监听80端口，并将请求分发给flask。
 
-配置DNS，参考[Get A Domain](https://aws.amazon.com/cn/getting-started/tutorials/get-a-domain/, 'Get A Domain')。
+配置DNS，参考[Godaddy DNS Setting](http://www.metsky.com/archives/345.html, 'Godaddy DNS Setting')中的‘修改A记录’和‘CName别名’，登录Godaddy - 点击自己的账号 - Manager Domain - DNS - Manager Zones - enter your domain name，然后修改A记录的Value成我们在AWS上申请的Elastic IP，这样我们的域名就关联到AWS上的服务器了。  
 
 ## Deploy
 
@@ -334,7 +334,8 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 在EC2实例中安装Apache：sudo apt install apache2  
 安装mod\_wsgi：sudo apt-get install libapache2-mod-wsgi  
 
-
+配置wsgi和Apache，参考[mod\_wsgi](http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/, 'mod\_wsgi')和[Deploy Flask App](https://plwang.github.io/2016/10/21/DeployFlaskUsingApache/, 'Deploy Flask App')。  
+注意：1 使用Apache服务器，应用需要存放在 /var/www 目录下；2 如果遇到错误，可以查看 /var/log/apache2/error.log 文件进行Debug。  
 
 # Other Topics  
 
