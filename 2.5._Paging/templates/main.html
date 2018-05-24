@@ -137,7 +137,7 @@
     <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">
 
       <div class="card-columns" style="" ng-controller="post_list_controller">
-        <div infinite-scroll='loadMorePost()' infinite-scroll-distance='2'>
+        <div infinite-scroll='loadMorePost()' infinite-scroll-distance='2' infinite-scroll-disabled='busy'>
           <div class="card" ng-repeat="post in post_list">
             <img class="card-img-top" ng-src="{{ post.img }}" alt="">
             <div class="card-body">
