@@ -284,10 +284,6 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 模板功能这里是在前端用Angular实现的，这是现在普遍的做法。相比前一节纯静态网页的代码，可以这一节中使用Angular渲染页面的做法使得代码更加容易维护，数据层和显示层也分离开了。  
 
-## Paging  
-
-使用ngInfiniteScroll实现滚动到底部自动加载下一页。参考[ngInfiniteScroll](http://sroze.github.io/ngInfiniteScroll/index.html 'ngInfiniteScroll')。
-
 ## Other  
 
 Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstrap Themes](https://themes.getbootstrap.com/ 'bootstrap themes')  
