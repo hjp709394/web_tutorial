@@ -12,19 +12,19 @@
    2.2. Template  
    2.3. Create a more complex page  
    2.4. Restful  
-   2.5. Infinite Scroll  
-   2.6. Other  
-   2.7. Reference  
+   2.5. Other  
+   2.6. Reference  
  3. Deploy to AWS / Azure  
  4. Other topics  
    4.1. Project structure  
-   4.2. Database / Paging  
+   4.2. Database / Paging
    4.3. Login / HTTPS
    4.4. Blueprint  
    4.5. Reference  
    4.6. Custom your bootstrap  
    4.7. NPM front-end package managerment  
-   4.8. Reference
+   4.8. Intinite scroll
+   4.9. Reference
  5. Other frameworks  
    5.1. ASP.net  
    5.2. Spring  
@@ -282,7 +282,7 @@ Bootstrap框架帮助我们轻易地构建Responsive的网页，也就是整个�
 
 注意到我们服务器端并没有使用到模板的功能，所以在代码里不再使用render\_template函数，而是直接将html返回到客户端。这是为了方便而采用的做法，静态网页一般使用Apache等服务器，他们针对静态资源做了优化，性能优于动态网页服务器（比如Tomcat），也更加稳定可靠。  
 
-模板功能这里是在前端用Angular实现的，这是现在普遍的做法。相比前一节纯静态网页的代码，可以这一节中使用Angular渲染页面的做法使得代码更加容易维护，数据层和显示层也分离开了。  
+这里模板功能这里是在前端进行的，这是现在普遍的做法。Angular，React，Vue都提供了模板功能，这里我们使用Angular，相比前一节纯静态网页的代码，可以这一节中使用Angular渲染页面的做法使得代码更加容易维护，数据层和显示层也分离开了。  
 
 ## Other  
 
@@ -291,6 +291,8 @@ Bootstrap有很多收费的Theme，可以学习其中的设计，参考[Bootstra
 Chrome的开发者工具有Device Mode可以方便测试手机的显示效果，参考[Chrome Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/?hl=zh-tw 'Chrome Device Mode') 。浏览器通常会帮我们cache很多静态的资源，这样我们的改动就没办法即时显示出来，为解决这个问题我们可以在Chrome的Dev Tool里禁用cache，参考[Disabling Chrome Cache](https://stackoverflow.com/questions/5690269/disabling-chrome-cache-for-website-development, 'Disabling Chrome Cache')。
 
 Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个布局就变了，为了处理这个问题，例子中使用css创建正方形的div，并将图片居中放置在div中。  
+
+本来想实现类似Pinterest的无限下拉的功能，但是遇到了两个问题没有解决：1 使用Bootstrap实现的Masonry布局是将每个item从一列一列排序的，这样动态加载新内容的时候旧的内容位置会发生改变；2 分页加载图片的时候，有些图片漏返回。暂时没有时间处理，后面再考虑实现吧。  
 
 ## Reference  
 [Rest API Best Practice](http://polyglot.ninja/rest-api-best-practices-python-flask-tutorial/ 'Rest API Best Practice')  
@@ -305,7 +307,8 @@ Carousel对于不等边长的图片处理比较麻烦，图片尺寸变了整个
 # Deploy to AWS / Azure  
 
 ## Register your domain
-在[Godaddy](https://www.godaddy.com/ 'Godaddy')上注册喜欢的域名。这里已经注册了mengjiang.org。
+在[Godaddy](https://www.godaddy.com/ 'Godaddy')上注册喜欢的域名。这里已经注册了mengjiang.org。  
+Godaddy似乎会公开个人电话住址等信息，可以换AWS Route 53或者namesilo。  
 
 ## Set up your AWS account  
 
