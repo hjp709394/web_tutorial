@@ -1,8 +1,8 @@
 import json
-
+import os
 
 json_db = {}
-with open('./2.4._Restful/db.json') as dbf:
+with open(os.path.dirname(os.path.realpath(__file__)) + '/db.json') as dbf:
     json_db = json.load(dbf)
 
 
