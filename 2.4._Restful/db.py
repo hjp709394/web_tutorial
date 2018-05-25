@@ -1,5 +1,5 @@
 import json
-
+import os
 
 json_db = {}
 with open(os.path.dirname(os.path.realpath(__file__)) + '/db.json') as dbf:
